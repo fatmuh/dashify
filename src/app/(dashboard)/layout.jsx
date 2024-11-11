@@ -19,12 +19,12 @@ export default function DashboardLayout({ children }) {
         <div className="flex flex-col flex-1">
           <header className="px-5 py-4 flex items-center justify-between">
 
-            <div className="flex items-center gap-1 md:gap-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <SidebarTrigger />
-              <div className="flex md:hidden mt-[3px] font-semibold text-sm">
+              <div className="flex md:hidden font-semibold text-sm">
                 Dashify
               </div>
-              <Breadcrumb className="hidden md:flex mt-[3px]">
+              <Breadcrumb className="hidden md:flex">
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbPage>Dashify</BreadcrumbPage>
