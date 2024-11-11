@@ -7,7 +7,6 @@ import {
   Inbox,
   Search,
   Settings,
-  SquareKanban,
 } from "lucide-react";
 
 import {
@@ -37,6 +36,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 // Menu items.
 const items = [
@@ -70,7 +70,7 @@ const items = [
 export function AppSidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  
+
   return (
     <Sidebar>
       <SidebarContent className="font-[family-name:var(--font-geist-sans)]">
@@ -78,13 +78,12 @@ export function AppSidebar() {
           <DropdownMenu onOpenChange={(open) => setIsOpen(open)}>
             <DropdownMenuTrigger asChild className="cursor-pointer">
               <div
-                className={`py-1 flex justify-between items-center px-2 rounded-xl cursor-pointer hover:bg-zinc-100 ${
-                  isOpen ? "bg-zinc-100" : ""
-                }`}
+                className={`py-1 flex justify-between items-center px-2 rounded-xl cursor-pointer hover:bg-zinc-100 ${isOpen ? "bg-zinc-100" : ""
+                  }`}
               >
                 <div className="flex items-center gap-2">
                   <div className="flex justify-center items-center w-8 h-8 bg-zinc-900 rounded-lg">
-                    <SquareKanban className="text-white w-5 h-5" />
+                    <Image src="/favicon.svg" width={30} height={30} alt="Dashify" />
                   </div>
                   <div className="flex flex-col">
                     <h4 className="font-semibold text-sm">Dashify</h4>

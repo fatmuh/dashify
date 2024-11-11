@@ -108,8 +108,8 @@ const chartConfig = {
 const DashboardPage = () => {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="col-span-1 order-2 md:order-1">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+        <div className="col-span-1 order-2 xl:order-1">
           <Card>
             <CardHeader>
               <CardTitle>Leads</CardTitle>
@@ -140,9 +140,9 @@ const DashboardPage = () => {
             </CardContent>
           </Card>
         </div>
-        <div className="col-span-1 order-1 md:order-2">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <Alert className="col-span-1 md:col-span-2">
+        <div className="col-span-1 order-1 xl:order-2">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+            <Alert className="col-span-1 xl:col-span-2">
               <Terminal className="h-4 w-4" />
               <AlertTitle>Heads up!</AlertTitle>
               <AlertDescription>
@@ -152,68 +152,76 @@ const DashboardPage = () => {
             <Card className="p-5 flex justify-start items-center">
               <div className="flex flex-col gap-5 h-full">
                 <h4 className="text-black text-sm md:text-base">
-                  Template Admin
+                  Total revenue
                 </h4>
                 <h2 className="text-black font-medium text-base md:text-xl">
-                  IDR 237,234
+                  $2.6M
                 </h2>
-                <div className="inline-flex">
-                  <Badge variant="outline">
-                    Awaiting Review
+                <div className="inline-flex gap-1 items-center">
+                  <Badge variant="success">
+                    +4.5%
                   </Badge>
+                  <span className="text-xs">from last week</span>
                 </div>
               </div>
             </Card>
             <Card className="p-5 flex justify-start items-center">
               <div className="flex flex-col gap-5 h-full">
                 <h4 className="text-black text-sm md:text-base">
-                  Template Admin
+                  Average order value
                 </h4>
                 <h2 className="text-black font-medium text-base md:text-xl">
-                  IDR 237,234
+                  $455
                 </h2>
-                <div className="inline-flex">
-                  <Badge className="bg-green-500/20 text-green-500 hover:bg-green-500/20">
-                    Processed
+                <div className="inline-flex gap-1 items-center">
+                  <Badge variant="danger">
+                    -0.5%
                   </Badge>
+                  <span className="text-xs">from last week</span>
                 </div>
               </div>
             </Card>
             <Card className="p-5 flex justify-start items-center">
               <div className="flex flex-col gap-5 h-full">
                 <h4 className="text-black text-sm md:text-base">
-                  Template Admin
+                  Tickets sold
                 </h4>
                 <h2 className="text-black font-medium text-base md:text-xl">
-                  IDR 237,234
+                  5,888
                 </h2>
-                <div className="inline-flex">
-                  <Badge className="bg-blue-500/20 text-blue-500 hover:bg-blue-500/20">
-                    Processing
+                <div className="inline-flex gap-1 items-center">
+                  <Badge variant="success">
+                    +4.5%
                   </Badge>
+                  <span className="text-xs">from last week</span>
                 </div>
               </div>
             </Card>
             <Card className="p-5 flex justify-start items-center">
               <div className="flex flex-col gap-5 h-full">
                 <h4 className="text-black text-sm md:text-base">
-                  Template Admin
+                  Page views
                 </h4>
                 <h2 className="text-black font-medium text-base md:text-xl">
-                  IDR 237,234
+                  823,067
                 </h2>
                 <div className="inline-flex">
-                  <Badge className="bg-red-500/20 text-red-500 hover:bg-red-500/20">
-                    Cancelled
-                  </Badge>
+                  <div className="inline-flex gap-1 items-center">
+                    <Badge variant="success">
+                      +21.2%
+                    </Badge>
+                    <span className="text-xs">from last week</span>
+                  </div>
                 </div>
               </div>
             </Card>
           </div>
         </div>
       </div>
-      <div className="mt-5 inline-block w-full align-middle">
-        <div className="overflow-hidden md:rounded-lg">
+
+      <div className="my-16 inline-block w-full align-middle">
+        <span className="text-sm font-semibold">Recent Orders</span>
+        <div className="mt-3 overflow-hidden md:rounded-lg">
           <div className="relative border rounded-xl border-neutral-30 bg-white px-0 py-0 overflow-auto">
             <Table>
               <TableHeader className="bg-zinc-200/30">

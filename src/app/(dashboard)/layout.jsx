@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
-import { Bell } from "lucide-react";
+import Notification from "@/components/notification";
 
 export default function DashboardLayout({ children }) {
   return (
@@ -18,12 +18,13 @@ export default function DashboardLayout({ children }) {
         <AppSidebar />
         <div className="flex flex-col flex-1">
           <header className="px-5 py-4 flex items-center justify-between">
+
             <div className="flex items-center gap-1 md:gap-3">
               <SidebarTrigger />
-              <div className="flex md:hidden font-semibold text-sm">
+              <div className="flex md:hidden mt-[3px] font-semibold text-sm">
                 Dashify
               </div>
-              <Breadcrumb className="hidden md:flex">
+              <Breadcrumb className="hidden md:flex mt-[3px]">
                 <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbPage>Dashify</BreadcrumbPage>
@@ -37,12 +38,24 @@ export default function DashboardLayout({ children }) {
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
-            <div className="cursor-pointer">
-              <Bell className="w-4" />
-            </div>
+
+            <Notification />
           </header>
 
           <main className="px-7 py-4 text-zinc-900">
+            <Breadcrumb className="flex md:hidden mb-6">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Dashify</BreadcrumbPage>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/">Home</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
             {children}
           </main>
         </div>
