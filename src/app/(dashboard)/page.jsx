@@ -76,18 +76,18 @@ const invoices = [
 ];
 
 const chartData = [
-  { month: "January", desktop: 186, test: 30, mobile: 80 },
-  { month: "February", desktop: 305, test: 30, mobile: 200 },
-  { month: "March", desktop: 237, test: 30, mobile: 120 },
-  { month: "April", desktop: 73, test: 30, mobile: 190 },
-  { month: "May", desktop: 209, test: 30, mobile: 130 },
-  { month: "June", desktop: 214, test: 30, mobile: 140 },
-  { month: "July", desktop: 214, test: 30, mobile: 140 },
-  { month: "August", desktop: 214, test: 30, mobile: 140 },
-  { month: "September", desktop: 214, test: 30, mobile: 140 },
-  { month: "October", desktop: 214, test: 30, mobile: 140 },
-  { month: "November", desktop: 214, test: 30, mobile: 140 },
-  { month: "December", desktop: 214, test: 30, mobile: 140 },
+  { month: "January", desktop: 186, tablet: 30, mobile: 80 },
+  { month: "February", desktop: 305, tablet: 50, mobile: 200 },
+  { month: "March", desktop: 237, tablet: 53, mobile: 120 },
+  { month: "April", desktop: 73, tablet: 67, mobile: 190 },
+  { month: "May", desktop: 209, tablet: 83, mobile: 130 },
+  { month: "June", desktop: 214, tablet: 42, mobile: 140 },
+  { month: "July", desktop: 214, tablet: 103, mobile: 140 },
+  { month: "August", desktop: 214, tablet: 20, mobile: 140 },
+  { month: "September", desktop: 214, tablet: 33, mobile: 140 },
+  { month: "October", desktop: 214, tablet: 92, mobile: 140 },
+  { month: "November", desktop: 214, tablet: 77, mobile: 140 },
+  { month: "December", desktop: 214, tablet: 41, mobile: 140 },
 ];
 
 const chartConfig = {
@@ -95,9 +95,9 @@ const chartConfig = {
     label: "Desktop",
     color: "#2563eb",
   },
-  test: {
-    label: "Test",
-    color: "#2563eb",
+  tablet: {
+    label: "Tablet",
+    color: "#7dd3fc",
   },
   mobile: {
     label: "Mobile",
@@ -134,7 +134,7 @@ const DashboardPage = () => {
                     radius={4}
                   />
                   <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
-                  <Bar dataKey="test" fill="var(--color-test)" radius={4} />
+                  <Bar dataKey="tablet" fill="var(--color-tablet)" radius={4} />
                 </BarChart>
               </ChartContainer>
             </CardContent>
