@@ -37,7 +37,7 @@ export default function DashboardLayout({ children }) {
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
-            <div>
+            <div className="cursor-pointer">
               <Bell className="w-4" />
             </div>
           </header>
