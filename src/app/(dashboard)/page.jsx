@@ -26,6 +26,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
 
 const invoices = [
   {
@@ -79,6 +82,12 @@ const chartData = [
   { month: "April", desktop: 73, test: 30, mobile: 190 },
   { month: "May", desktop: 209, test: 30, mobile: 130 },
   { month: "June", desktop: 214, test: 30, mobile: 140 },
+  { month: "July", desktop: 214, test: 30, mobile: 140 },
+  { month: "August", desktop: 214, test: 30, mobile: 140 },
+  { month: "September", desktop: 214, test: 30, mobile: 140 },
+  { month: "October", desktop: 214, test: 30, mobile: 140 },
+  { month: "November", desktop: 214, test: 30, mobile: 140 },
+  { month: "December", desktop: 214, test: 30, mobile: 140 },
 ];
 
 const chartConfig = {
@@ -87,7 +96,7 @@ const chartConfig = {
     color: "#2563eb",
   },
   test: {
-    label: "Desktop",
+    label: "Test",
     color: "#2563eb",
   },
   mobile: {
@@ -99,18 +108,15 @@ const chartConfig = {
 const DashboardPage = () => {
   return (
     <>
-      <div className="grid grid-cols-12">
-        <div className="col-span-12 md:col-span-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="col-span-1 order-2 md:order-1">
           <Card>
             <CardHeader>
-              <CardTitle>Card Title</CardTitle>
-              <CardDescription>Card Description</CardDescription>
+              <CardTitle>Leads</CardTitle>
+              <CardDescription>Leads Description</CardDescription>
             </CardHeader>
             <CardContent>
-              <ChartContainer
-                config={chartConfig}
-                className="min-h-[200px] w-full"
-              >
+              <ChartContainer config={chartConfig} className="h-[300px] w-full">
                 <BarChart data={chartData}>
                   <CartesianGrid vertical={false} />
                   <XAxis
@@ -133,6 +139,77 @@ const DashboardPage = () => {
               </ChartContainer>
             </CardContent>
           </Card>
+        </div>
+        <div className="col-span-1 order-1 md:order-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <Alert className="col-span-1 md:col-span-2">
+              <Terminal className="h-4 w-4" />
+              <AlertTitle>Heads up!</AlertTitle>
+              <AlertDescription>
+                You can add components to your app using the cli.
+              </AlertDescription>
+            </Alert>
+            <Card className="p-5 flex justify-start items-center">
+              <div className="flex flex-col gap-5 h-full">
+                <h4 className="text-black text-sm md:text-base">
+                  Template Admin
+                </h4>
+                <h2 className="text-black font-medium text-base md:text-xl">
+                  IDR 237,234
+                </h2>
+                <div className="inline-flex">
+                  <Badge variant="outline">
+                    Awaiting Review
+                  </Badge>
+                </div>
+              </div>
+            </Card>
+            <Card className="p-5 flex justify-start items-center">
+              <div className="flex flex-col gap-5 h-full">
+                <h4 className="text-black text-sm md:text-base">
+                  Template Admin
+                </h4>
+                <h2 className="text-black font-medium text-base md:text-xl">
+                  IDR 237,234
+                </h2>
+                <div className="inline-flex">
+                  <Badge className="bg-green-500/20 text-green-500 hover:bg-green-500/20">
+                    Processed
+                  </Badge>
+                </div>
+              </div>
+            </Card>
+            <Card className="p-5 flex justify-start items-center">
+              <div className="flex flex-col gap-5 h-full">
+                <h4 className="text-black text-sm md:text-base">
+                  Template Admin
+                </h4>
+                <h2 className="text-black font-medium text-base md:text-xl">
+                  IDR 237,234
+                </h2>
+                <div className="inline-flex">
+                  <Badge className="bg-blue-500/20 text-blue-500 hover:bg-blue-500/20">
+                    Processing
+                  </Badge>
+                </div>
+              </div>
+            </Card>
+            <Card className="p-5 flex justify-start items-center">
+              <div className="flex flex-col gap-5 h-full">
+                <h4 className="text-black text-sm md:text-base">
+                  Template Admin
+                </h4>
+                <h2 className="text-black font-medium text-base md:text-xl">
+                  IDR 237,234
+                </h2>
+                <div className="inline-flex">
+                  <Badge className="bg-red-500/20 text-red-500 hover:bg-red-500/20">
+                    Cancelled
+                  </Badge>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
       <div className="mt-5 inline-block w-full align-middle">
