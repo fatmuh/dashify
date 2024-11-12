@@ -37,6 +37,7 @@ import {
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 // Menu items.
 const items = [
@@ -78,12 +79,18 @@ export function AppSidebar() {
           <DropdownMenu onOpenChange={(open) => setIsOpen(open)}>
             <DropdownMenuTrigger asChild className="cursor-pointer">
               <div
-                className={`py-1 flex justify-between items-center px-2 rounded-xl cursor-pointer hover:bg-zinc-100 ${isOpen ? "bg-zinc-100" : ""
-                  }`}
+                className={`py-1 flex justify-between items-center px-2 rounded-xl cursor-pointer hover:bg-zinc-100 ${
+                  isOpen ? "bg-zinc-100" : ""
+                }`}
               >
                 <div className="flex items-center gap-2">
                   <div className="flex justify-center items-center w-8 h-8 bg-zinc-900 rounded-lg">
-                    <Image src="/favicon.svg" width={30} height={30} alt="Dashify" />
+                    <Image
+                      src="/favicon.svg"
+                      width={30}
+                      height={30}
+                      alt="Dashify"
+                    />
                   </div>
                   <div className="flex flex-col">
                     <h4 className="font-semibold text-sm">Dashify</h4>
@@ -95,16 +102,16 @@ export function AppSidebar() {
                 </div>
               </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent
-              className="md:mt-2 w-56 font-[family-name:var(--font-geist-sans)]"
-            >
+            <DropdownMenuContent className="md:mt-2 w-56 font-[family-name:var(--font-geist-sans)]">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  Profile
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                </DropdownMenuItem>
+                <Link href="/profile">
+                  <DropdownMenuItem className="cursor-pointer">
+                    Profile
+                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem>
                   Billing
                   <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
@@ -156,10 +163,10 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild isActive={pathname === item.url}>
-                    <a href={item.url}>
+                    <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
