@@ -13,7 +13,10 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Dashify",
+  title: {
+    template: '%s - Dashify',
+    default: 'Dashify',
+  },
   description: "NextJS 15 & Shadcn UI Dashboard",
 };
 
