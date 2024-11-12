@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { Cog, Lock, Mail, Phone, User } from "lucide-react";
+import { Cog, Lock, Mail, Phone, User, UserCog } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ export default function ProfilePage() {
                   href="/personal"
                   className="flex items-center text-sm font-normal gap-2 border-b-2 border-transparent"
                 >
-                  <User Cog className="w-4" /> Personal
+                  <UserCog className="w-4" /> Personal
                 </Link>
                 <Link
                   href="/password"
