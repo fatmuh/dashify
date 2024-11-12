@@ -11,7 +11,7 @@ export default function ProfilePage() {
     <>
       <Card className="rounded-md w-full max-w-none shadow-none border-none">
         <div className="flex flex-col w-full pb-5 xl:px-5">
-        <div className="flex items-center gap-10 w-[350px] md:w-full md:overflow-hidden overflow-x-scroll whitespace-nowrap">
+        <div className="flex items-center gap-10 max-w-sm md:max-w-full md:overflow-hidden overflow-x-scroll whitespace-nowrap">
             <Link
               href="/profile"
               className="flex items-center text-sm font-medium gap-2 border-b-2 w-20 border-zinc-900 py-2"
