@@ -10,7 +10,7 @@ export const metadata = {
 export default function ProfileLayout({ children }) {
   return (
     <>
-      <div className="px-0 md:px-5 grid grid-cols-12 mb-8">
+      <div className="px-0 xl:px-5 grid grid-cols-12 mb-8">
         <div className="col-span-12">
           <ScrollArea className="whitespace-nowrap rounded-none border-none">
             <div className="flex w-full space-x-4">

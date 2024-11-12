@@ -12,7 +12,7 @@ export default function DashboardLayout({ children }) {
           <header className="px-5 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2 md:gap-3">
               <SidebarTrigger />
-              <div className="flex md:hidden font-semibold text-sm">
+              <div className="flex xl:hidden font-semibold text-sm">
                 Dashify
               </div>
               <BreadcrumbSection />
@@ -23,7 +23,7 @@ export default function DashboardLayout({ children }) {
 
           <main className="px-7 py-4 text-zinc-900">
             <BreadcrumbSection
-              className="flex md:hidden mb-6"
+              className="flex xl:hidden mb-6"
             />
             {children}
           </main>

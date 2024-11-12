@@ -28,7 +28,7 @@ export default function BreadcrumbSection({ className, asChild, urlChild }) {
     return metadataMap[pathname]?.title || asChild || "Page";
   };
   return (
-    <Breadcrumb className={cn("hidden md:flex", className)}>
+    <Breadcrumb className={cn("hidden xl:flex", className)}>
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbPage>Dashify</BreadcrumbPage>
