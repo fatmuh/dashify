@@ -6,40 +6,47 @@ import { Cog, Lock, Mail, Phone, User } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+
 export default function ProfilePage() {
   return (
     <>
-      <Card className="rounded-md w-full max-w-none shadow-none border-none">
-        <div className="flex flex-col w-full pb-5 xl:px-5">
-        <div className="flex items-center gap-10 max-w-sm md:max-w-full md:overflow-hidden overflow-x-scroll whitespace-nowrap">
-            <Link
-              href="/profile"
-              className="flex items-center text-sm font-medium gap-2 border-b-2 w-20 border-zinc-900 py-2"
-            >
-              <User className="w-4" /> Profile
-            </Link>
-            <Link
-              href="/personal"
-              className="flex items-center text-sm font-normal gap-2 border-b-2 border-transparent"
-            >
-              <User Cog className="w-4" /> Personal
-            </Link>
-            <Link
-              href="/password"
-              className="flex items-center text-sm font-normal gap-2 border-b-2 border-transparent"
-            >
-              <Lock className="w-4" /> Change Password
-            </Link>
-            <Link
-              href="/settings"
-              className="flex items-center text-sm font-normal gap-2 border-b-2 border-transparent"
-            >
-              <Cog className="w-4" /> Settings
-            </Link>
-          </div>
-          <div className="border-b w-full"></div>
+      <div className="px-0 md:px-5 grid grid-cols-12 mb-8">
+        <div className="col-span-12">
+          <ScrollArea className="whitespace-nowrap rounded-none border-none">
+            <div className="flex w-full space-x-4">
+              <div className="flex overflow-hidden rounded-none gap-5">
+                <Link
+                  href="/profile"
+                  className="flex items-center text-sm font-medium gap-2 border-b-2 w-20 border-zinc-900 py-2"
+                >
+                  <User className="w-4" /> Profile
+                </Link>
+                <Link
+                  href="/personal"
+                  className="flex items-center text-sm font-normal gap-2 border-b-2 border-transparent"
+                >
+                  <User Cog className="w-4" /> Personal
+                </Link>
+                <Link
+                  href="/password"
+                  className="flex items-center text-sm font-normal gap-2 border-b-2 border-transparent"
+                >
+                  <Lock className="w-4" /> Change Password
+                </Link>
+                <Link
+                  href="/settings"
+                  className="flex items-center text-sm font-normal gap-2 border-b-2 border-transparent"
+                >
+                  <Cog className="w-4" /> Settings
+                </Link>
+              </div>
+            </div>
+            <ScrollBar orientation="horizontal" />
+          </ScrollArea>
         </div>
-      </Card>
+        <div className="col-span-12 border-t"></div>
+      </div>
 
       <div className="grid grid-cols-12 gap-5 xl:gap-0">
         <div className="col-span-12 xl:col-span-3">
